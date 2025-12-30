@@ -29,7 +29,7 @@ if not st.session_state['auth']:
 # --- NAVEGAÇÃO LATERAL ---
 with st.sidebar:
     st.title("💎 Loja Digital")
-    menu = st.radio("Navegação:", ["💰 Fluxo de Caixa", "👗 Em Condições", "👥 Meus Clientes", "📊 Relatórios"])
+    menu = st.radio("Navegação:", ["💰 Fluxo de Caixa", "👗 Condicionais", "👥 Meus Clientes", "📊 Relatórios"])
     st.divider()
     # BACKUP ESSENCIAL
     st.subheader("💾 Backup Diário")
@@ -116,6 +116,7 @@ elif menu == "📊 Relatórios":
         c3.metric("Líquido", f"R$ {v-g:.2f}")
     else:
         st.info("Sem dados.")
+
 
 
 
