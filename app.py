@@ -23,7 +23,7 @@ if not st.session_state['autenticado']:
 # --- CONEXÃO COM GOOGLE SHEETS ---
 url = "https://docs.google.com/spreadsheets/d/1bj24FG-Qe5mZmEPLjlnav1uuN4v-o43atSE1Pz0zzt0/edit?usp=sharing"
 conn = st.connection("gsheets", type=GSheetsConnection)
-url = st.secrets["connections"]["gsheets"]["spreadsheet"]
+
 
 # --- NAVEGAÇÃO ---
 with st.sidebar:
@@ -94,6 +94,7 @@ elif menu == "📊 Relatórios":
         total_vendas = df_mov[df_mov['tipo'] == "Entrada (Venda)"]['valor'].sum()
         st.metric("Total de Vendas Acumulado", f"R$ {total_vendas:.2f}")
         st.line_chart(df_mov.set_index('data')['valor'])
+
 
 
 
