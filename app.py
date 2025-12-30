@@ -66,7 +66,7 @@ if menu == "💰 Fluxo de Caixa":
             }])
             # Atualiza a planilha no Google Drive
             df_atualizado = pd.concat([df_vendas, nova_venda], ignore_index=True)
-            conn.update(worksheet="movimentacoes", data=df_atualizado)
+            df_mov = conn.read(worksheet="movimentacoes")
             st.success("Salvo com sucesso no Google Drive!")
             st.rerun()
 
@@ -88,6 +88,7 @@ elif menu == "👥 Meus Clientes":
             st.rerun()
     
     st.dataframe(df_clientes, use_container_width=True)
+
 
 
 
