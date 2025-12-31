@@ -6,9 +6,6 @@ from datetime import datetime
 # --- CONFIGURAÇÃO ---
 st.set_page_config(page_title="Sistema Comercial Bianca", layout="wide")
 
-# --- CONEXÃO DIRETA PELO ID ---
-# O sistema vai pegar o ID que você salvou nos Secrets
-conn = st.connection("gsheets", type=GSheetsConnection)
 
 # --- LOGIN ---
 if 'auth' not in st.session_state: st.session_state['auth'] = False
@@ -52,6 +49,7 @@ if menu == "💰 Fluxo de Caixa":
 elif menu == "👥 Clientes":
     st.header("👥 Seus Clientes")
     st.dataframe(df_cli, use_container_width=True)
+
 
 
 
